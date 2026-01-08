@@ -1,4 +1,4 @@
-# Wastewater Isolate Genome Assembly & QC (ISO1–ISO3)
+# Microbial Genome Assembly & QC (ISO1–ISO3)
 
 De novo assembly and genome quality assessment for three bacterial isolates (ISO1–ISO3) sequenced from wastewater. This repository preserves **human-readable evidence artifacts** (QC/assembly reports + summaries) and a clear workflow narrative, while staying lightweight (no raw FASTQs or large intermediate outputs).
 
@@ -224,12 +224,11 @@ Short summaries are included per isolate. Duplicated BUSCOs are reported as part
 
 This analysis was executed in a Linux **scheduler-managed batch workflow** (cluster-submitted jobs on shared compute nodes; HTCondor). To make the pipeline portable and reproducible across compute nodes, I created isolated **Conda environments** for each major tool (FastQC, Trimmomatic, SPAdes, QUAST, BUSCO). In the original execution environment, these environments were packaged for reliable staging onto compute nodes.
 
-Scheduler submit files are not retained; however, reproducibility is captured via:
+Scheduler submit files and one-click re-run scripts are not retained; however, reproducibility is captured via:
 
 * preserved QC/assembly evidence artifacts (FastQC/QUAST)
 * SPAdes logs + input dataset YAMLs
 * BUSCO short summaries (contain lineage dataset and tool configuration details)
-* local-equivalent command templates in `repro/commands.md`
 
 ---
 
@@ -289,9 +288,6 @@ Scheduler submit files are not retained; however, reproducibility is captured vi
 │       │   └── short_summary.txt
 │       └── ISO3/
 │           └── short_summary.txt
-└── repro/
-    ├── commands.md
-    └── versions.txt
 ```
 
 ---
