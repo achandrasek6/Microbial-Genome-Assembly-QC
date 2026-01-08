@@ -250,15 +250,12 @@ Scheduler submit files and one-click re-run scripts are not retained; however, r
 │   │   ├── ISO1/
 │   │   │   ├── ISO1_L003_R1_001_fastqc.html
 │   │   │   ├── ISO1_L003_R2_001_fastqc.html
-│   │   │   └── (optional) ISO1_*_fastqc/    # FastQC companion folders if generated
 │   │   ├── ISO2/
 │   │   │   ├── ISO2_L003_R1_001_fastqc.html
 │   │   │   ├── ISO2_L003_R2_001_fastqc.html
-│   │   │   └── (optional) ISO2_*_fastqc/
 │   │   └── ISO3/
 │   │       ├── ISO3_L003_R1_001_fastqc.html
 │   │       ├── ISO3_L003_R2_001_fastqc.html
-│   │       └── (optional) ISO3_*_fastqc/
 │   ├── trimmomatic/
 │   │   └── trimmed-table.txt
 │   ├── spades/
