@@ -1,0 +1,14 @@
+# big bioinformatics data
+*.fastq
+*.fastq.gz
+*.fq.gz
+*.bam
+*.sam
+*.cram
+*.vcf
+*.vcf.gz
+
+# common junk
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,23 @@
+# BUSCO version is: 6.0.0 
+# The lineage dataset is: flavobacteriia_odb12 (Creation date: 2025-05-14, number of genomes: 133, number of BUSCOs: 671)
+# Summarized benchmarking in BUSCO notation for file /home/achandrasek6/Project1/03_SPADES/FASTA/ISO3.fasta
+# BUSCO was run in mode: prok_genome_prod
+# Gene predictor used: prodigal
+
+	***** Results: *****
+
+	C:98.8%[S:96.7%,D:2.1%],F:0.1%,M:1.0%,n:671	   
+	663	Complete BUSCOs (C)			   
+	649	Complete and single-copy BUSCOs (S)	   
+	14	Complete and duplicated BUSCOs (D)	   
+	1	Fragmented BUSCOs (F)			   
+	7	Missing BUSCOs (M)			   
+	671	Total BUSCO groups searched		   
+
+Assembly Statistics:
+
+
+Dependencies and versions:
+	hmmsearch: 3.4
+	bbtools: None
+	prodigal: 2.6.3

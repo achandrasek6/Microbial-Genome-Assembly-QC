@@ -1,0 +1,7 @@
+- "left reads":
+  - "/var/lib/condor/execute/slot1/dir_3575712/scratch/trimmed_ISO1_L003_R1_001.fastq.gz"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/var/lib/condor/execute/slot1/dir_3575712/scratch/trimmed_ISO1_L003_R2_001.fastq.gz"
+  "type": "paired-end"

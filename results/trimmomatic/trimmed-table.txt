@@ -1,0 +1,4 @@
+Sample  StartPairs  PairsSurvived  PctSurvived
+ISO1    4608169     4578990        99.37%
+ISO2    8781530     8648449        98.48%
+ISO3    12652264    12372983       97.79%
