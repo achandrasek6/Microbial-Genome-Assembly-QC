@@ -289,12 +289,6 @@ Scheduler submit files and one-click re-run scripts are not retained; however, r
 
 ---
 
-## Notes
-
-* GitHub may not render `results/quast/ISO*/html/report.html` as an interactive page; the QUAST PDFs are the primary evidence artifacts for browsing in GitHub.
-* FastQC HTML pages may reference companion folders when generated; if your FastQC output includes those folders, keep them alongside the HTMLs for full fidelity.
-
----
 
 ## License
 
