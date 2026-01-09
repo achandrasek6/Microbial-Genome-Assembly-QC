@@ -1,6 +1,6 @@
 # Microbial Genome Assembly & QC (ISO1–ISO3)
 
-De novo assembly and genome quality assessment for three bacterial isolates (ISO1–ISO3) sequenced from wastewater. This repository preserves **human-readable evidence artifacts** (QC/assembly reports + summaries) and a clear workflow narrative, while staying lightweight (no raw FASTQs or large intermediate outputs).
+De novo assembly and genome quality assessment for three bacterial isolates (ISO1–ISO3) sequenced from wastewater. This repository preserves human-readable evidence artifacts (QC/assembly reports and summaries) and a clear workflow narrative, while staying lightweight (no raw sequencing FASTQs or large intermediate outputs).
 
 ---
 
