@@ -26,6 +26,8 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 
 ### Read-level summary (FastQC)
 
+**Takeaway:** ISO1/ISO2 show similar GC (~33–34%), while ISO3 has markedly higher GC (~51–52%), an early signal that ISO3 may be compositionally and/or taxonomically distinct.
+
 | Isolate | R1 total reads | R1 %GC | R2 total reads | R2 %GC | Read length |
 | ------- | -------------- | ------ | -------------- | ------ | ----------- |
 | ISO1    | 4,608,169      | 34%    | 4,608,169      | 34%    | 151 bp      |
@@ -33,6 +35,8 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 | ISO3    | 12,652,264     | 51%    | 12,652,264     | 52%    | 151 bp      |
 
 ### Trimming (Trimmomatic)
+
+**Takeaway:** Trimming preserved the vast majority of read pairs (≥97.8% survival), indicating minimal loss from filtering and retaining strong coverage for assembly.
 
 | Sample | Start pairs | Surviving pairs | % survived |
 | ------ | ----------- | --------------- | ---------- |
@@ -42,6 +46,10 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 
 ### Assembly summary (QUAST)
 
+**What this shows:** Reference-agnostic draft assembly statistics. N50 is the contig length such that contigs of at least that length cover 50% of the assembly; L50 is the number of contigs needed to reach 50% of the assembly length.
+
+**Takeaway:** ISO1/ISO2 assemble to ~5–6 Mb with ~33–35% GC and relatively low contig counts, consistent with coherent bacterial draft genomes. ISO3 is substantially larger (~12.1 Mb) with higher GC (48.7%) and more contigs, reinforcing that it is an outlier.
+
 | Isolate | # Contigs | Largest contig (bp) | Total length (bp) | GC (%) | N50 (bp) | L50 |
 | ------- | --------- | ------------------- | ----------------- | ------ | -------- | --- |
 | ISO1    | 43        | 456,364             | 5,160,243         | 34.46  | 264,771  | 7   |
@@ -50,9 +58,11 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 
 ### BUSCO completeness
 
-(Plot shown in **Figures** section below.)
+> Plot shown in the **Figures** section below.
 
-**What this shows:** BUSCO searches each assembly for a set of conserved single‑copy orthologs (here: *flavobacteriia_odb12*, n=671). The stacked bars summarize the fraction of BUSCO genes that are **Complete** (single‑copy vs duplicated), **Fragmented**, or **Missing**. High completeness supports that the assemblies capture most core genes; a higher duplicated fraction can reflect biological duplication and/or mixed/duplicated sequence content in the assembly.
+**What this shows:** BUSCO searches each assembly for a set of conserved single‑copy orthologs (here: *flavobacteriia_odb12*, n=671). The stacked bars summarize the fraction of BUSCO genes that are **Complete** (single‑copy vs duplicated), **Fragmented**, or **Missing**.
+
+**Takeaway:** All assemblies are highly complete against this lineage set; ISO3 shows the highest duplicated fraction (D), which can be informative when evaluating potential heterogeneity.
 
 | Isolate | Lineage              | C (%) | S (%) | D (%) | F (%) | M (%) |
 | ------- | -------------------- | ----- | ----- | ----- | ----- | ----- |
@@ -60,7 +70,7 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 | ISO2    | flavobacteriia_odb12 | 99.3  | 97.9  | 1.3   | 0.3   | 0.4   |
 | ISO3    | flavobacteriia_odb12 | 98.8  | 96.7  | 2.1   | 0.1   | 1.0   |
 
-### Interpretation (one paragraph)
+### Interpretation
 
 * **ISO1 and ISO2** are consistent with **Flavobacteriia-like** genomes based on their ~5–6 Mb assembly sizes and ~33–35% GC content, paired with high contiguity.
 * **ISO3** is a clear outlier (~12.1 Mb, ~48.7% GC, more contigs), consistent with a **non-Flavobacteriia organism and/or mixed culture/contamination** signal even if many conserved orthologs are still detected.
@@ -71,29 +81,33 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 
 ## Figures
 
-Selected plots (full reports in `results/`).
+> Selected plots (full reports in `results/`).
 
 ### BUSCO completeness
 
 ![BUSCO completeness per assembly](assets/figures/busco_figure.png)
 
+> **Figure 1.** BUSCO completeness profile for each assembly against conserved single-copy orthologs (flavobacteriia_odb12; n=671), split into Complete (single-copy vs duplicated), Fragmented, and Missing.
+
 ### Assembly contiguity (QUAST Nx)
 
 ![QUAST Nx plot — ISO1](assets/figures/quast_iso1_nx.png)
 
+> **Figure 2.** ISO1 Nx curve (reference-agnostic contiguity). Higher curves indicate more of the assembly captured in longer contigs.
+
 ![QUAST Nx plot — ISO3](assets/figures/quast_iso3_nx.png)
 
-**What this shows:** The Nx curve describes assembly contiguity without a reference. At each x‑value (0–100%), the y‑value is the contig length (kbp) such that contigs of at least that length cover x% of the assembly. **Higher curves** indicate more of the genome is contained in longer contigs (more contiguous assembly).
+> **Figure 3.** ISO3 Nx curve. Starts higher due to a very large contig, but drops across a longer tail, reflecting distribution across many contigs overall.
 
-**How to read the comparison:** ISO3’s curve starts much higher because it contains at least one very large contig (consistent with the large “largest contig” statistic), but the curve drops over a longer tail because the assembly is distributed across many contigs overall (higher fragmentation/complexity than ISO1/ISO2).
+> **How to read Nx:** at each x-value (0–100%), y is the contig length such that contigs ≥ y cover x% of the assembly.
 
 ### GC content distribution (QUAST; contigs)
 
 ![QUAST GC distribution across contigs — ISO3](assets/figures/quast_iso3_gc_contigs.png)
 
-**What this shows:** Distribution of GC% across assembled contigs/windows. A tight, unimodal distribution suggests a compositionally consistent genome. A **broad or multi‑modal** distribution can indicate heterogeneous sequence composition (e.g., different taxa in a mixed culture, plasmids, or regions acquired via horizontal transfer).
+> **Figure 4.** GC% distribution across contigs for ISO3. A multi-modal distribution suggests heterogeneous sequence composition (e.g., mixed culture, plasmids, or horizontally acquired regions).
 
-**What stands out here:** ISO3 shows a clearly **bimodal** GC distribution (peaks around ~35% and ~60%+), which supports the interpretation that ISO3 is compositionally distinct from ISO1/ISO2 and may reflect a non‑Flavobacteriia organism and/or mixed/contaminating sequence content.
+> **What stands out:** ISO3 shows a bimodal GC distribution (peaks ~35% and ~60%+), supporting that ISO3 is compositionally distinct from ISO1/ISO2.
 
 ---
 
@@ -155,7 +169,7 @@ flavobacteriia_odb12]
 
 ---
 
-## Why each step exists (plain-English, technically accurate)
+## Why each step exists
 
 * **FastQC (read QC):** checks whether raw sequencing reads are usable (quality-by-cycle, GC distribution, adapter/overrepresented sequences) before investing compute in assembly.
 * **Trimmomatic (trimming):** removes adapters and low-quality bases/reads so assembly is driven by higher-confidence sequence signal.
@@ -289,6 +303,12 @@ Scheduler submit files and one-click re-run scripts are not retained; however, r
 
 ---
 
+## Notes
+
+* GitHub may not render `results/quast/ISO*/html/report.html` as an interactive page; the QUAST PDFs are the primary evidence artifacts for browsing in GitHub.
+* FastQC HTML pages may reference companion folders when generated; if your FastQC output includes those folders, keep them alongside the HTMLs for full fidelity.
+
+---
 
 ## License
 
