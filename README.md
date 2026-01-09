@@ -137,7 +137,6 @@ Raw sequencing data and heavy intermediate outputs are not included to keep the 
 
 ---
 
-## ⚙️ Technical details
 
 ## 🎯 Scope
 
@@ -256,7 +255,6 @@ Scheduler submit files and one-click re-run scripts are not retained; however, r
 .
 ├── README.md
 ├── LICENSE
-├── .gitignore
 ├── assets/
 │   └── figures/
 │       ├── busco_figure.png
