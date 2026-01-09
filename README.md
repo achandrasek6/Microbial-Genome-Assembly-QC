@@ -89,6 +89,10 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 
 > **Figure 1.** BUSCO completeness profile for each assembly against conserved single-copy orthologs (flavobacteriia_odb12; n=671), split into Complete (single-copy vs duplicated), Fragmented, and Missing.
 
+> **Conclusion from this plot:** All three assemblies are highly complete (~99% complete BUSCOs), consistent with near-complete recovery of core gene content. ISO1 (C:664; S:660; D:4; F:3; M:4) and ISO2 (C:666; S:657; D:9; F:2; M:3) show very few fragmented/missing BUSCOs. ISO3 remains highly complete (C:663) but has the highest duplicated (D:14) and missing (M:7) counts, which is consistent with greater assembly/biological complexity (e.g., duplicated regions, strain heterogeneity, or mixed sequence content) and aligns with ISO3’s outlier signals in QUAST (larger assembly size and distinct GC profile).
+
+
+
 ### Assembly contiguity (QUAST Nx)
 
 ![QUAST Nx plot — ISO1](assets/figures/quast_iso1_nx.png)
