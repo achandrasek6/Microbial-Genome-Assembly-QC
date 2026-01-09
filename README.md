@@ -1,4 +1,9 @@
 # Microbial Genome Assembly & QC (ISO1–ISO3)
+![License](https://img.shields.io/badge/License-Apache--2.0-red)
+![FastQC](https://img.shields.io/badge/Tool-FastQC-informational)
+![SPAdes](https://img.shields.io/badge/Tool-SPAdes-informational)
+![QUAST](https://img.shields.io/badge/Tool-QUAST-informational)
+![BUSCO](https://img.shields.io/badge/Tool-BUSCO-informational)
 
 De novo assembly and genome quality assessment for three bacterial isolates (ISO1–ISO3) sequenced from wastewater. This repository preserves human-readable evidence artifacts (QC/assembly reports and summaries) and a clear workflow narrative, while staying lightweight (no raw sequencing FASTQs or large intermediate outputs).
 
