@@ -1,10 +1,10 @@
-# Microbial Genome Assembly & QC (ISO1–ISO3)
+# 🧬 Microbial Genome Assembly & QC (ISO1–ISO3)
 
 De novo assembly and genome quality assessment for three bacterial isolates (ISO1–ISO3) sequenced from wastewater. This repository preserves **human-readable evidence artifacts** (QC/assembly reports + summaries) and a clear workflow narrative, while staying lightweight (no raw FASTQs or large intermediate outputs).
 
 ---
 
-## Overview
+## 🧾 Overview
 
 **What this is:** A complete, end-to-end microbial genome QC + assembly evaluation workflow (reads → draft genomes → quality/completeness assessment).
 
@@ -22,9 +22,9 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 
 ---
 
-## Key results
+## 📊 Key results
 
-### Read-level summary (FastQC)
+### 🔍 Read-level summary (FastQC)
 
 **Takeaway:** ISO1/ISO2 show similar GC (~33–34%), while ISO3 has markedly higher GC (~51–52%), an early signal that ISO3 may be compositionally and/or taxonomically distinct.
 
@@ -34,7 +34,7 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 | ISO2    | 8,781,530      | 33%    | 8,781,530      | 33%    | 151 bp      |
 | ISO3    | 12,652,264     | 51%    | 12,652,264     | 52%    | 151 bp      |
 
-### Trimming (Trimmomatic)
+### ✂️ Trimming (Trimmomatic)
 
 **Takeaway:** Trimming preserved the vast majority of read pairs (≥97.8% survival), indicating minimal loss from filtering and retaining strong coverage for assembly.
 
@@ -44,7 +44,7 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 | ISO2   | 8,781,530   | 8,648,449       | 98.48%     |
 | ISO3   | 12,652,264  | 12,372,983      | 97.79%     |
 
-### Assembly summary (QUAST)
+### 🧩 Assembly summary (QUAST)
 
 **What this shows:** Reference-agnostic draft assembly statistics. N50 is the contig length such that contigs of at least that length cover 50% of the assembly; L50 is the number of contigs needed to reach 50% of the assembly length.
 
@@ -56,7 +56,7 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 | ISO2    | 48        | 493,624             | 5,841,551         | 33.67  | 204,914  | 9   |
 | ISO3    | 122       | 1,384,174           | 12,058,572        | 48.67  | 321,527  | 12  |
 
-### BUSCO completeness
+### ✅ BUSCO completeness
 
 > Plot shown in the **Figures** section below.
 
@@ -70,7 +70,7 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 | ISO2    | flavobacteriia_odb12 | 99.3  | 97.9  | 1.3   | 0.3   | 0.4   |
 | ISO3    | flavobacteriia_odb12 | 98.8  | 96.7  | 2.1   | 0.1   | 1.0   |
 
-### Interpretation
+### 🧠 Interpretation
 
 * **ISO1 and ISO2** are consistent with **Flavobacteriia-like** genomes based on their ~5–6 Mb assembly sizes and ~33–35% GC content, paired with high contiguity.
 * **ISO3** is a clear outlier (~12.1 Mb, ~48.7% GC, more contigs), consistent with a **non-Flavobacteriia organism and/or mixed culture/contamination** signal even if many conserved orthologs are still detected.
@@ -79,7 +79,7 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 
 ---
 
-## Figures
+## 🖼️ Figures
 
 > Selected plots (full reports in `results/`).
 
@@ -115,7 +115,7 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 
 ---
 
-## What this repo contains
+## 📦 What this repo contains
 
 This repo is intentionally **results/evidence-focused**:
 
@@ -127,7 +127,7 @@ This repo is intentionally **results/evidence-focused**:
 
 Raw sequencing data and heavy intermediate outputs are not included to keep the repository lightweight.
 
-### Quick links to evidence
+### 🔗 Quick links to evidence
 
 * **Read QC:** `results/fastqc/ISO*/`
 * **Trimming summary:** `results/trimmomatic/trimmed-table.txt`
@@ -137,9 +137,9 @@ Raw sequencing data and heavy intermediate outputs are not included to keep the 
 
 ---
 
-## Technical details
+## ⚙️ Technical details
 
-## Scope
+## 🎯 Scope
 
 This project implements a standard microbial WGS workflow to produce draft assemblies and evaluate whether each isolate is consistent with a coherent single genome versus an outlier that may indicate a different taxon and/or mixed composition.
 
@@ -153,7 +153,7 @@ Scope highlights:
 
 ---
 
-## Workflow
+## 🔄 Workflow
 
 ```mermaid
 flowchart LR
@@ -173,7 +173,7 @@ flavobacteriia_odb12]
 
 ---
 
-## Why each step exists
+## 💡 Why each step exists
 
 * **FastQC (read QC):** checks whether raw sequencing reads are usable (quality-by-cycle, GC distribution, adapter/overrepresented sequences) before investing compute in assembly.
 * **Trimmomatic (trimming):** removes adapters and low-quality bases/reads so assembly is driven by higher-confidence sequence signal.
@@ -183,7 +183,7 @@ flavobacteriia_odb12]
 
 ---
 
-## Methods (step-by-step)
+## 🧪 Methods (step-by-step)
 
 ### 1) Read quality control (FastQC)
 
@@ -238,7 +238,7 @@ Short summaries are included per isolate. Duplicated BUSCOs are reported as part
 
 ---
 
-## Compute environment and reproducibility
+## 🖥️ Compute environment and reproducibility
 
 This analysis was executed in a Linux **scheduler-managed batch workflow** (cluster-submitted jobs on shared compute nodes; HTCondor). To make the pipeline portable and reproducible across compute nodes, I created isolated **Conda environments** for each major tool (FastQC, Trimmomatic, SPAdes, QUAST, BUSCO). In the original execution environment, these environments were packaged for reliable staging onto compute nodes.
 
@@ -250,7 +250,7 @@ Scheduler submit files and one-click re-run scripts are not retained; however, r
 
 ---
 
-## Repository structure
+## 🗂️ Repository structure
 
 ```text
 .
@@ -307,13 +307,13 @@ Scheduler submit files and one-click re-run scripts are not retained; however, r
 
 ---
 
-## Notes
+## 📝 Notes
 
 * GitHub may not render `results/quast/ISO*/html/report.html` as an interactive page; the QUAST PDFs are the primary evidence artifacts for browsing in GitHub.
 * FastQC HTML pages may reference companion folders when generated; if your FastQC output includes those folders, keep them alongside the HTMLs for full fidelity.
 
 ---
 
-## License
+## 📜 License
 
 This project is licensed under the **Apache License 2.0**. See [`LICENSE`](LICENSE).
