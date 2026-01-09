@@ -1,6 +1,7 @@
 # Microbial Genome Assembly & QC (ISO1–ISO3)
 ![License](https://img.shields.io/badge/License-Apache--2.0-red)
 ![FastQC](https://img.shields.io/badge/Tool-FastQC-informational)
+![FastQC](https://img.shields.io/badge/Tool-Trimmomatic-informational)
 ![SPAdes](https://img.shields.io/badge/Tool-SPAdes-informational)
 ![QUAST](https://img.shields.io/badge/Tool-QUAST-informational)
 ![BUSCO](https://img.shields.io/badge/Tool-BUSCO-informational)
