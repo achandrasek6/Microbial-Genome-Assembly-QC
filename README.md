@@ -111,7 +111,7 @@ De novo assembly and genome quality assessment for three bacterial isolates (ISO
 
 > **Figure 4.** GC% distribution across contigs for ISO3. A multi-modal distribution suggests heterogeneous sequence composition (e.g., mixed culture, plasmids, or horizontally acquired regions).
 
-> **What stands out:** ISO3 shows a bimodal GC distribution (peaks ~35% and ~60%+), supporting that ISO3 is compositionally distinct from ISO1/ISO2.
+> **What stands out:** ISO3 shows a bimodal GC distribution (peaks ~35% and ~65%+), supporting that ISO3 is compositionally distinct from ISO1/ISO2.
 
 ---
 
